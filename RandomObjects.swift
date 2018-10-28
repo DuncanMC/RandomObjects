@@ -29,7 +29,6 @@ class RandomObjects<T> {
     var indexes: [Int]!
     var oldIndex: Int?
     
-    
     //-----------------------------------------------------------------------------------------------------------
     /**
      This is the designated initializer for the RandomObjects class. Use it to create a new instance of RandomObjects
@@ -41,14 +40,12 @@ class RandomObjects<T> {
         fillIndexesArray()
     }
     
-    
     //-----------------------------------------------------------------------------------------------------------
     /**
      A private function that builds the array of indexes used to select random items
      */
     private func fillIndexesArray() {
-        if indexes?.isEmpty != false
-        {
+        if indexes?.isEmpty != false {
             indexes = Array(0..<objectsArray.count)
         }
     }
@@ -59,7 +56,7 @@ class RandomObjects<T> {
      
      - Parameter newArray: A new array of objects to serve as a pool for the `RandomObjects` instance to manage.
      */
-    func setObjectsArray (newArray: [T]) -> Void {
+    public func setObjectsArray (newArray: [T]) -> Void {
         objectsArray = newArray
         indexes?.removeAll()
         fillIndexesArray()
@@ -75,7 +72,7 @@ class RandomObjects<T> {
      - Returns: An object from the array of objects
      */
     
-    func randomObject(refillWhenEmpty: Bool = true) -> T? {
+    public func randomObject(refillWhenEmpty: Bool = true) -> T? {
         var randomIndex: Int
         var objectIndex: Int
         
@@ -94,5 +91,4 @@ class RandomObjects<T> {
         oldIndex = objectIndex
         return objectsArray[objectIndex];
     }
-    
 }

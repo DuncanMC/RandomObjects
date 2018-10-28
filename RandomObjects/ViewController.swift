@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var arrayOfNumberStrings: [String]!
     var aRandomGenerator:RandomObjects<String>!
     
-    let count = 10
+    let count = 20
     
     func doInitSetup() {
         arrayOfNumberStrings  = [String]()
